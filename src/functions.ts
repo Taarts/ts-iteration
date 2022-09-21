@@ -18,6 +18,8 @@
 
 */
 
+import { moveEmitHelpers } from 'typescript'
+
 /**
  * 1) Define a function named `yelling` that takes an array of
  * strings as an argument and returns a new array with all
@@ -29,7 +31,7 @@
 
 function yelling(words: string[]): string[] {
   // Replace the code below with your own code
-  return []
+  return words.map(word => word.toUpperCase())
 }
 
 /**
@@ -44,7 +46,7 @@ function yelling(words: string[]): string[] {
 
 function doubleTrouble(numbers: number[]): number[] {
   // Replace the code below with your own code
-  return []
+  return numbers.map(numbers => numbers * 2)
 }
 
 /*
@@ -58,7 +60,7 @@ function doubleTrouble(numbers: number[]): number[] {
 
 function stringyIndexes(strings: string[]): string[] {
   // Replace the code below with your own code
-  return []
+  return strings.map((string, index) => string + ' is at index ' + index)
 }
 
 /*
@@ -71,9 +73,9 @@ function stringyIndexes(strings: string[]): string[] {
 
 function onlyTheEvenSurvive(numbers: number[]): number[] {
   // Replace the code below with your own code
-  return []
+  return numbers.filter(number => number % 2 === 0)
 }
-
+// console.log(onlyTheEvenIndexedSurvive)
 /*
  * 5) Define a function onlyTheEvenIndexedSurvive that accepts an array of
  * numbers and returns only the elements at indexes that are even
@@ -84,7 +86,7 @@ function onlyTheEvenSurvive(numbers: number[]): number[] {
 
 function onlyTheEvenIndexedSurvive(numbers: number[]): number[] {
   // Replace the code below with your own code
-  return []
+  return numbers.filter((number, index) => index % 2 === 0)
 }
 
 /*
@@ -109,9 +111,14 @@ type Movie = {
   year: number
   score: number
 }
-function bestMoviesOfTheYear(movieObjectArray: Movie[], year: number): string[] {
-  // Replace the code below with your own code
-  return []
+function bestMoviesOfTheYear(
+  movieObjectArray: Movie[],
+  year: number
+): string[] {
+  //   // Replace the code below with your own code
+  return movieObjectArray
+    .filter(movie => movie.year === year && movie.score > 90)
+    .map(movie => movie.name)
 }
 
 /*
@@ -125,7 +132,7 @@ function bestMoviesOfTheYear(movieObjectArray: Movie[], year: number): string[] 
 
 function everyoneIsOdd(numbers: number[]): boolean {
   // Replace the code below with your own code
-  return false
+  return numbers.every(number => number % 2 === 1)
 }
 
 /*
