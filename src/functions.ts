@@ -18,7 +18,7 @@
 
 */
 
-import { moveEmitHelpers } from 'typescript'
+const { moveEmitHelpers } = require('typescript')
 
 /**
  * 1) Define a function named `yelling` that takes an array of
