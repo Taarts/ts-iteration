@@ -146,7 +146,8 @@ function everyoneIsOdd(numbers: number[]): boolean {
 
 function findTheNeedle(strings: string[]): string {
   // Replace the code below with your own code
-  return ''
+  return strings.find(string => string.includes('needle')) || ''
+  // console.log('needle')
 }
 
 /*
@@ -160,7 +161,7 @@ function findTheNeedle(strings: string[]): string {
 
 function findTheNeedleIndex(strings: string[]): number {
   // Replace the code below with your own code
-  return 42
+  return strings.findIndex(string => string.includes('needle'))
 }
 
 /*
@@ -174,7 +175,7 @@ function findTheNeedleIndex(strings: string[]): number {
 
 function someoneToLove(strings: string[]): boolean {
   // Replace the code below with your own code
-  return false
+  return strings.some(string => string.length === 4)
 }
 
 /*
@@ -213,7 +214,10 @@ function someoneToLove(strings: string[]): boolean {
 type Hobbies = Record<string, { title: string; description: string }>
 function objectKeys(objectOfHobbies: Hobbies): string[] {
   // Replace the code below with your own code
-  return []
+  // const object
+  return Object.keys(objectOfHobbies).map(key => {
+    return `${key} - ${objectOfHobbies[key].title}`
+  })
 }
 
 /**
